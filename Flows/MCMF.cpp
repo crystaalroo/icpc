@@ -1,4 +1,4 @@
-template <typename tf, typename tc>struct MCF{
+template <typename tf, typename tc>struct MCMF{
 	int n;
 	tf INFFLOW;
 	tc INFCOST;
@@ -8,7 +8,7 @@ template <typename tf, typename tc>struct MCF{
 	priority_queue<pair<tc, int>, vector<pair<tc, int>>, greater<pair<tc, int>>> q;
 	struct edge{int to, rev; tf f, cap; tc cost;};
 	vector<vector<edge>> g;
-	MCF(int n):n(n),prio(n),curflow(n),prevedge(n),prevnode(n),pot(n),g(n){
+	MCMF(int n):n(n),prio(n),curflow(n),prevedge(n),prevnode(n),pot(n),g(n){
     INFFLOW=numeric_limits<tf>::max() / 2;
     INFCOST=numeric_limits<tc>::max() / 2;
   }
