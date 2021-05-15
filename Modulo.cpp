@@ -6,7 +6,7 @@ template <modinfo const &ref> struct modular {
 	 static modular root() { return modular(ref.root); }
 	 uint v;
 	 // modular(initializer_list<uint>ls):v(*ls.bg){}
-	 modular(lli vv = 0) { s(vv % mod + mod); }
+	 modular(long long int vv = 0) { s(vv % mod + mod); }
 	 modular &s(uint vv) {
 			 v = vv < mod ? vv : vv - mod;
 			 return *this;
@@ -39,7 +39,7 @@ template <modinfo const &ref> struct modular {
 	 friend modular operator/(int x, const modular &y) { return modular(x) / y; }
 	 friend ostream &operator<<(ostream &os, const modular &m) { return os << m.v; }
 	 friend istream &operator>>(istream &is, modular &m) {
-			 lli x;
+			 long long int x;
 			 is >> x;
 			 m = modular(x);
 			 return is;
