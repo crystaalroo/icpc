@@ -1,15 +1,15 @@
 const int mod = 1e9+7;
 
-int Sum(li a, li b){
+li Sum(li a, li b){
     return (a+b)%mod;
 }
 
-int Mul(li a, li b){
+li Mul(li a, li b){
 	a%=mod, b%=mod;
     return (a*b)%mod;
 }
 
-int Pow(long long  a, long long b){
+li Pow(long long  a, long long b){
 	int res = 1;
 	while(b){ 
 		if(b%2) res = Mul(res,a);
@@ -17,7 +17,7 @@ int Pow(long long  a, long long b){
 	} return res;
 }
 
-int Inv(li a){
+li Inv(li a){
     return Pow(a,mod-2);
 }
 
