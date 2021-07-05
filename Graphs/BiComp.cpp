@@ -3,14 +3,14 @@ struct Biconnected{
 	// nbc = number of biconnected components
 	struct edge {int u,v,comp;bool bridge;};
 	vector<edge> e;
-	vvc<int>g;
+	vector<vector<int>>g;
 	int n,nbc,T;
 	void add_edge(int u, int v){
 		g[u].pb(sz(e));
 		g[v].pb(sz(e));
 		e.pb({u,v,-1,0});
 	}
-	vc<int>D,B,art;
+	vector<int>D,B,art;
 	stack<int> st;
 	void dfs(int u,int pe){
 		B[u]=D[u]=T++;
@@ -35,9 +35,9 @@ struct Biconnected{
 	}
 
 	Biconnected(int n):n(n),nbc(0),T(0){
-		D = vc<int>(n,-1);
-		art = B = vc<int>(n,0);
-		g = vvc<int>(n);
+		D = vector<int>(n,-1);
+		art = B = vector<int>(n,0);
+		g = vector<int>(n);
 	}
 
 	void run(){
@@ -45,7 +45,7 @@ struct Biconnected{
 	}
 
 	auto get_cmp(){
-		vvc<int>v(nbc);
+		vector<vector<int>>v(nbc);
 		for(auto i:e)v[i.comp].pb(i.u), v[i.comp].pb(i.v);
 		return v;
 	}

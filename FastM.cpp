@@ -1,11 +1,14 @@
 const int mod = 1e9+7;
 
 li Sum(li a, li b){
+	a = (a%mod + mod)%mod;
+	b = (b%mod + mod)%mod;
     return (a+b)%mod;
 }
 
 li Mul(li a, li b){
-	a%=mod, b%=mod;
+	a = (a%mod + mod)%mod;
+	b = (b%mod + mod)%mod;
     return (a*b)%mod;
 }
 
