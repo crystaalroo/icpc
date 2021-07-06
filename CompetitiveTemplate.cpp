@@ -11,19 +11,6 @@
 #define vvv(type, name, h, w, ...) vector<vector<vector<type>>> name(h, vector<vector<type>>(w, vector<type>(__VA_ARGS__)))
 using namespace std;
 
-long long gcd(long long a, long long b){ return b? gcd(b, a%b) : a; }
-long long lcm(long long a, long long b){ return (!a or !b)? 0 : a * b / gcd(a,b); } 
-long long  poww(long long  a, long long b){
-	long long res = 1;
-	while(b){ 
-		if(b%2) res = res * a ; 
-		a = a * a;  b>>=1;
-	} return res;
-}
-
-// mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-// int rnd(int n){return uniform_int_distribution<int>(0, n-1)(rng);}
-
 template <typename T> static constexpr T inf = numeric_limits<T>::max() / 2;
 template<class t,class u>bool mmax(t&a,u b){if(a<b)a=b;return a<b;}
 template<class t,class u>bool mmin(t&a,u b){if(b<a)a=b;return b<a;}

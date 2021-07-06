@@ -9,7 +9,7 @@ struct number_theory{
 			else mu[i] = 0, phi[i] = phi[i / lpf[i]] * lpf[i];
 			for(int j = 0; j < (int)prime.size() && prime[j] <= lpf[i] && prime[j] * i <= SZ; ++ j) lpf[prime[j] * i] = prime[j];
 		}
-	}
+	} 
 	int mu_large(long long x){ // O(sqrt(x))
 		int res = 1;
 		for(long long i = 2; i * i <= x; ++ i) if(x % i == 0){
